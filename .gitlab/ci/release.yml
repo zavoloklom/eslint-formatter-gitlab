@@ -1,0 +1,23 @@
+release__semantic-release:
+  stage: release
+  image: ${NODE_IMAGE}
+  interruptible: false
+  rules:
+    - if: $SKIP_SEMANTIC_RELEASE == "true"
+      when: never
+    - if: $CI_COMMIT_MESSAGE =~ /\[skip release\]/
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: on_success
+    - when: never
+  before_script:
+    - apk --update --no-cache add git
+  script:
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npx semantic-release
+  artifacts:
+    paths:
+      - package.json
+      - package-lock.json
+      - CHANGELOG.md
+    expire_in: 1 hour

@@ -1,0 +1,12 @@
+build:
+  stage: build
+  image: ${NODE_IMAGE}
+  needs:
+    - job: install__npm
+      artifacts: true
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - ./dist
+    expire_in: 1 hour

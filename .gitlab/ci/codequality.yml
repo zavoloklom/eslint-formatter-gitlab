@@ -1,0 +1,53 @@
+codequality__eslint:
+  stage: codequality
+  image: ${NODE_IMAGE}
+  allow_failure: false
+  interruptible: true
+  needs:
+    - job: install__npm
+      artifacts: true
+    - job: build
+      artifacts: true
+  script:
+    - npm run lint --  -f ./dist/bundle.mjs --output-file=eslint-codequality.json
+  artifacts:
+    when: always
+    paths:
+      - eslint-codequality.json
+    reports:
+      codequality: eslint-codequality.json
+    expire_in: 1 month
+
+dependency-scanning:
+  stage: codequality
+  image: ${NODE_IMAGE}
+  allow_failure: true
+  interruptible: true
+  needs:
+    - job: install__npm
+      artifacts: true
+  script:
+    - npm audit --json | npx gitlab-npm-audit-parser -o gl-dependency-scanning.json
+  artifacts:
+    when: always
+    paths:
+      - gl-dependency-scanning.json
+    reports:
+      dependency_scanning: gl-dependency-scanning.json
+
+license-management:
+  stage: codequality
+  image: ${NODE_IMAGE}
+  allow_failure: true
+  interruptible: true
+  needs:
+    - job: install__npm
+      artifacts: true
+  script:
+    - npx -y license-checker --json | npx -y gitlab-ci-license-checker-parser -o gl-license-management-report.json
+  artifacts:
+    when: always
+    paths:
+      - gl-license-management-report.json
+    reports:
+      license_scanning: gl-license-management-report.json

@@ -1,0 +1,20 @@
+tests__unit:
+  stage: tests
+  image: ${NODE_IMAGE}
+  interruptible: true
+  needs:
+    - job: install__npm
+      artifacts: true
+  script:
+    - npm run test:coverage
+    - cat ./coverage/junit.xml
+    - wget -qO - https://coverage.codacy.com/get.sh | sh -s -- report -r ./coverage/cobertura-coverage.xml
+  artifacts:
+    paths:
+      - coverage/
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+      junit: coverage/junit.xml
+  coverage: '/Statements.*?\s+(\d+.\d+)/'

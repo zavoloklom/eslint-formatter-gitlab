@@ -1,0 +1,17 @@
+include:
+  - local: '.gitlab/ci/*.yml'
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME != $CI_DEFAULT_BRANCH
+
+stages:
+  - install
+  - build
+  - codequality
+  - tests
+  - release
+
+variables:
+  NODE_IMAGE: node:20.14.0-alpine3.20

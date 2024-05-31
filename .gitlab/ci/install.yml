@@ -1,0 +1,12 @@
+install__npm:
+  stage: install
+  image: ${NODE_IMAGE}
+  interruptible: true
+  needs: [ ]
+  script:
+    - npm ci --prefer-offline --no-progress --no-audit || echo "NPM CI FAILED, TRYING TO INSTALL" && npm install
+  artifacts:
+    paths:
+      - node_modules/
+      - package-lock.json
+    expire_in: 1 hour
