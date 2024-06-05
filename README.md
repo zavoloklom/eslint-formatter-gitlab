@@ -95,6 +95,15 @@ resolution.
 ]
 ```
 
+You can see an example of the widget and how errors are displayed
+in [Merge Request #2](https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter/-/merge_requests/2).
+
+This merge request includes detailed examples and explanations of the widget's functionality, showcasing how it
+integrates with GitLab to display code quality issues reported by ESLint.
+
+Reviewing this merge request can provide insights into the formatter's capabilities and how it enhances error reporting
+within GitLab.
+
 ## Contributing
 
 If you'd like to contribute to this project, please read through [CONTRIBUTING.md file](./CONTRIBUTING.md).
@@ -102,7 +111,7 @@ If you'd like to contribute to this project, please read through [CONTRIBUTING.m
 ## Changelog
 
 > Changelog is automatically generated based on [semantic-release](https://github.com/semantic-release/changelog)
-and [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). 
+> and [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 See the [CHANGELOG.md file](./CHANGELOG.md) for detailed lists of changes for each version.
 
