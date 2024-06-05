@@ -40,15 +40,15 @@ export interface Issue {
     };
     // Categories indicating the nature of the issue.
     categories: (
-        | 'Bug Risk'
-        | 'Clarity'
-        | 'Compatibility'
-        | 'Complexity'
-        | 'Duplication'
-        | 'Performance'
-        | 'Security'
-        | 'Style'
-        )[];
+      | 'Bug Risk'
+      | 'Clarity'
+      | 'Compatibility'
+      | 'Complexity'
+      | 'Duplication'
+      | 'Performance'
+      | 'Security'
+      | 'Style'
+    )[];
     // Locations refer to ranges of a source code file. A Location contains a path and a source range (expressed as lines or positions).
     location: Location;
     // An array of additional Location objects related to the issue.

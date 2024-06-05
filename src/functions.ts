@@ -8,7 +8,7 @@ export const getRelativePath = (path: string, context: ESLint.LintResultData): s
     return relative(context.cwd, path);
 };
 
-export const generateFingerprint = (data: Array<string|null>, hashes: Set<string>): string => {
+export const generateFingerprint = (data: (string | null)[], hashes: Set<string>): string => {
     const hash = createHash('md5');
 
     for (const part of data) {
@@ -29,15 +29,15 @@ export const generateFingerprint = (data: Array<string|null>, hashes: Set<string
     return digest;
 };
 
-export const determineSeverity = (severityCode: number, isFatal: boolean): Severity => {
-    if (isFatal) return 'critical';
+export const determineSeverity = (severityCode: number, isFatal: true | undefined): Severity => {
+    if (isFatal === true) return 'critical';
 
     switch (severityCode) {
-    case 1:
-        return 'minor';
-    case 2:
-        return 'major';
-    default:
-        return 'info';
+        case 1:
+            return 'minor';
+        case 2:
+            return 'major';
+        default:
+            return 'info';
     }
 };

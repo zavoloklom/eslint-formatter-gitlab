@@ -13,15 +13,11 @@
     "noEmitHelpers": true,
     "resolveJsonModule": true
   },
-//  "tsimp": {
-//    "compilerOptions": {
-//      "module": "NodeNext",
-//      "moduleResolution": "NodeNext",
-//      "skipLibCheck": true,
-//      "strict": false,
-//      "declaration": false
-//    }
-//  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

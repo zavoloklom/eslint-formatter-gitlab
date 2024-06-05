@@ -1,14 +1,13 @@
-import { ESLint } from 'eslint';
+import { ESLint, Linter } from 'eslint';
 import type { Issue } from './types.d.ts';
 import { getRelativePath, generateFingerprint, determineSeverity } from './functions.js';
 
 const gitlabCodeQualityFormatter = (results: ESLint.LintResult[], context: ESLint.LintResultData): string => {
-    const hashes: Set<string> = new Set();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const issues: Issue[] = results.flatMap((result: { messages: any[]; filePath: string; }) =>
+    const hashes = new Set<string>();
+    const issues: Issue[] = results.flatMap((result: { messages: Linter.LintMessage[]; filePath: string; }) =>
         result.messages.map(message => ({
             type: 'issue',
-            check_name: message.ruleId || 'unknown_rule',
+            check_name: message.ruleId ?? 'unknown_rule',
             description: message.message,
             content: {
                 body: `Error found in ${message.ruleId}`
@@ -18,7 +17,7 @@ const gitlabCodeQualityFormatter = (results: ESLint.LintResult[], context: ESLin
                 path: getRelativePath(result.filePath, context),
                 lines: {
                     begin: message.line,
-                    end: message.endLine || message.line
+                    end: message.endLine ?? message.line
                 },
                 positions: {
                     begin: {
@@ -26,8 +25,8 @@ const gitlabCodeQualityFormatter = (results: ESLint.LintResult[], context: ESLin
                         column: message.column
                     },
                     end: {
-                        line: message.endLine || message.line,
-                        column: message.endColumn || message.column
+                        line: message.endLine ?? message.line,
+                        column: message.endColumn ?? message.column
                     }
                 }
             },
@@ -38,6 +37,5 @@ const gitlabCodeQualityFormatter = (results: ESLint.LintResult[], context: ESLin
 
     return JSON.stringify(issues);
 };
-
 
 export default gitlabCodeQualityFormatter;
