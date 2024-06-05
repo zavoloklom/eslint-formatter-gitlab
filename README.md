@@ -1,14 +1,14 @@
 # Eslint Gitlab Codequality Formatter
 
-[![Latest Release](https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter/-/badges/release.svg?style=flat-square)](https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter/-/releases)
+[![Latest Release](https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab/-/badges/release.svg?style=flat-square)](https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab/-/releases)
 ![Coverage Badge](https://img.shields.io/codacy/coverage/f40620b9d84b4424ae766a0bda5d768c?style=flat-square&label=Coverage)
-[![Codacy Code Quality Badge](https://img.shields.io/codacy/grade/f40620b9d84b4424ae766a0bda5d768c?style=flat-square&logo=codacy&label=Code%20Quality)](https://app.codacy.com/gl/gitlab-formatters/eslint-gitlab-formatter/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Code Quality Badge](https://img.shields.io/codacy/grade/f40620b9d84b4424ae766a0bda5d768c?style=flat-square&logo=codacy&label=Code%20Quality)](https://app.codacy.com/gl/gitlab-formatters/eslint-formatter-gitlab/dashboard?utm_source=gl&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=whit&style=flat-square)](https://conventionalcommits.org)
 
 Formatter that transforms [ESLint](https://eslint.org/) reports into a format suitable for use
 with [GitLab widgets](https://docs.gitlab.com/ee/ci/testing/code_quality.html).
 
-> The source code is hosted on [GitLab](https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter).
+> The source code is hosted on [GitLab](https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab).
 > Although there is an automatic mirror of this repository
 > on [GitHub](https://github.com/zavoloklom/eslint-formatter-gitlab), all bug reports, feature requests, and merge
 > requests should be submitted through GitLab.
@@ -96,7 +96,7 @@ resolution.
 ```
 
 You can see an example of the widget and how errors are displayed
-in [Merge Request #2](https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter/-/merge_requests/2).
+in [Merge Request #2](https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab/-/merge_requests/2).
 
 This merge request includes detailed examples and explanations of the widget's functionality, showcasing how it
 integrates with GitLab to display code quality issues reported by ESLint.
@@ -106,14 +106,14 @@ within GitLab.
 
 ## Contributing
 
-If you'd like to contribute to this project, please read through [CONTRIBUTING.md file](./CONTRIBUTING.md).
+If you'd like to contribute to this project, please read through [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## Changelog
 
 > Changelog is automatically generated based on [semantic-release](https://github.com/semantic-release/changelog)
 > and [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-See the [CHANGELOG.md file](./CHANGELOG.md) for detailed lists of changes for each version.
+See the [CHANGELOG.md](./CHANGELOG.md) file for detailed lists of changes for each version.
 
 ## License
 

@@ -9,12 +9,12 @@
     "gitlab",
     "gitlab-ci"
   ],
-  "homepage": "https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter",
+  "homepage": "https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab",
   "bugs": {
-    "url": "https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter/-/issues"
+    "url": "https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab/-/issues"
   },
   "repository": {
-    "url": "git+ssh://git@gitlab.com/gitlab-formatters/eslint-gitlab-formatter.git"
+    "url": "git+ssh://git@gitlab.com/gitlab-formatters/eslint-formatter-gitlab.git"
   },
   "funding": "https://github.com/zavoloklom#how-to-support",
   "license": "MIT",

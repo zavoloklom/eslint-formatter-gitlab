@@ -5,7 +5,7 @@ in this project you agree to abide by its causes.
 
 ## Source Code
 
-The source code is hosted on [GitLab](https://gitlab.com/gitlab-formatters/eslint-gitlab-formatter). Although there is
+The source code is hosted on [GitLab](https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab). Although there is
 an automatic mirror of this repository on [GitHub](https://github.com/zavoloklom/eslint-formatter-gitlab), all bug
 reports, feature requests, and merge requests should be submitted through GitLab.
 
