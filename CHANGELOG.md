@@ -1,3 +1,9 @@
+## [1.0.1](https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab/compare/v1.0.0...v1.0.1) (2024-06-07)
+
+### Bug Fixes
+
+* remove duplication in tests ([8f5ec73](https://gitlab.com/gitlab-formatters/eslint-formatter-gitlab/commit/8f5ec7364e3eede3e78c77d5f0a5c9c67f829e51))
+
 ## 1.0.0 (2024-06-07)
 
 ### Others

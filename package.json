@@ -1,6 +1,6 @@
 {
   "name": "@gitlab-formatters/eslint-formatter-gitlab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Formatter that transforms ESLint reports into a format suitable for use with GitLab widgets.",
   "keywords": [
     "eslint",
