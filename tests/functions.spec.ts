@@ -29,9 +29,7 @@ test('generateFingerprint handles hash collisions by generating a new unique has
 
     hashes.add(initialFingerprint);
 
-    const dataForCollision = ['path/to/file.js', 'no-unused-vars', 'Unused variable "x"', '10', '5'];
-
-    const newFingerprint = generateFingerprint(dataForCollision, hashes);
+    const newFingerprint = generateFingerprint(data, hashes);
     t.not(initialFingerprint, newFingerprint, 'New hash should be different from the initial to avoid collision');
     t.is(hashes.has(newFingerprint), true, 'New hash should be added to the set');
     t.is(hashes.size, 2, 'There should be two unique hashes in the set now');
