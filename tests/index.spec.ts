@@ -39,7 +39,7 @@ const mockResults: ESLint.LintResult[] = [{
     usedDeprecatedRules: []
 }];
 
-// Simulated context
+// Mock ESLint context
 const context: ESLint.LintResultData = {
     cwd: '/path/to',
     rulesMeta: {}

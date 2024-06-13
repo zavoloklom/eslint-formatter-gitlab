@@ -40,6 +40,6 @@ test('determineSeverity returns correct severity levels', t => {
     t.is(determineSeverity(1, undefined), 'minor');
     t.is(determineSeverity(2, undefined), 'major');
     t.is(determineSeverity(0, undefined), 'info');
-    t.is(determineSeverity(2, true), 'critical'); // проверка фатальной ошибки
+    t.is(determineSeverity(2, true), 'critical');
 });
 
