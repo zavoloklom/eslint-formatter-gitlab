@@ -68,7 +68,7 @@
     "rollup-plugin-dts": "6.1.1",
     "semantic-release": "24.2.5",
     "tap-xunit": "2.4.1",
-    "tsimp": "2.0.11",
+    "tsimp": "2.0.12",
     "typescript": "5.4.5",
     "typescript-eslint": "8.0.0-alpha.26",
     "typescript-json-schema": "0.63.0"
