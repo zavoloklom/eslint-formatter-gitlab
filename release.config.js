@@ -1,104 +1,102 @@
+// eslint-disable-next-line import/no-default-export
 export default {
-    branches: ['main'],
-    plugins: [
-        '@semantic-release/commit-analyzer',
-        '@semantic-release/release-notes-generator',
-        '@semantic-release/changelog',
-        '@semantic-release/npm',
-        [
-            '@semantic-release/git',
-            {
-                assets: [
-                    'package.json',
-                    'package-lock.json',
-                    'CHANGELOG.md',
-                ],
-                message: 'release: ${nextRelease.version} [skip ci]',
-            },
-        ],
-        [
-            '@semantic-release/gitlab',
-            {
-                gitlabUrl: 'https://gitlab.com',
-                assets: [
-                    {
-                        path: 'README.md',
-                        label: 'Documentation',
-                    },
-                    {
-                        path: 'CHANGELOG.md',
-                        label: 'Changelog',
-                    },
-                ],
-            },
-        ],
+  branches: ['main'],
+  plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/changelog',
+    '@semantic-release/npm',
+    [
+      '@semantic-release/git',
+      {
+        assets: ['package.json', 'package-lock.json', 'CHANGELOG.md'],
+        // eslint-disable-next-line no-template-curly-in-string
+        message: 'release: ${nextRelease.version} [skip ci]',
+      },
     ],
-    preset: 'conventionalcommits',
-    presetConfig: {
-        types: [
-            {
-                type: 'build',
-                section: 'Build System',
-            },
-            {
-                type: 'chore',
-                section: 'Others',
-            },
-            {
-                type: 'ci',
-                section: 'CI/CD',
-            },
-            {
-                type: 'deps',
-                section: 'Dependencies',
-            },
-            {
-                type: 'docs',
-                section: 'Documentation',
-            },
-            {
-                type: 'feat',
-                section: 'Features',
-            },
-            {
-                type: 'fix',
-                section: 'Bug Fixes',
-            },
-            {
-                type: 'perf',
-                section: 'Performance Improvements',
-            },
-            {
-                type: 'refactor',
-                section: 'Code Refactoring',
-            },
-            {
-                type: 'revert',
-                section: 'Reverts',
-            },
-            {
-                type: 'style',
-                section: 'Styling',
-            },
-            {
-                type: 'test',
-                section: 'Tests',
-            },
+    [
+      '@semantic-release/gitlab',
+      {
+        gitlabUrl: 'https://gitlab.com',
+        assets: [
+          {
+            path: 'README.md',
+            label: 'Documentation',
+          },
+          {
+            path: 'CHANGELOG.md',
+            label: 'Changelog',
+          },
         ],
-        releaseRules: [
-            {
-                type: 'ci',
-                release: false 
-            },
-            {
-                type: 'style',
-                release: false
-            },
-            {
-                type: 'test',
-                release: false
-            },
-        ],
-        userUrlFormat: 'https://gitlab.com/{{user}}',
-    },
+      },
+    ],
+  ],
+  preset: 'conventionalcommits',
+  presetConfig: {
+    types: [
+      {
+        type: 'build',
+        section: 'Build System',
+      },
+      {
+        type: 'chore',
+        section: 'Others',
+      },
+      {
+        type: 'ci',
+        section: 'CI/CD',
+      },
+      {
+        type: 'deps',
+        section: 'Dependencies',
+      },
+      {
+        type: 'docs',
+        section: 'Documentation',
+      },
+      {
+        type: 'feat',
+        section: 'Features',
+      },
+      {
+        type: 'fix',
+        section: 'Bug Fixes',
+      },
+      {
+        type: 'perf',
+        section: 'Performance Improvements',
+      },
+      {
+        type: 'refactor',
+        section: 'Code Refactoring',
+      },
+      {
+        type: 'revert',
+        section: 'Reverts',
+      },
+      {
+        type: 'style',
+        section: 'Styling',
+      },
+      {
+        type: 'test',
+        section: 'Tests',
+      },
+    ],
+    releaseRules: [
+      {
+        type: 'ci',
+        release: false,
+      },
+      {
+        type: 'style',
+        release: false,
+      },
+      {
+        type: 'test',
+        release: false,
+      },
+    ],
+    userUrlFormat: 'https://gitlab.com/{{user}}',
+  },
 };
