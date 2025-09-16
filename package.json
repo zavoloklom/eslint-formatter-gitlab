@@ -63,7 +63,7 @@
     "eslint-plugin-ava": "15.1.0",
     "gitlab-ci-license-checker-parser": "1.0.3",
     "globals": "16.4.0",
-    "rollup": "4.50.1",
+    "rollup": "4.50.2",
     "rollup-plugin-dts": "6.2.3",
     "semantic-release": "24.2.8",
     "tap-xunit": "2.4.1",
